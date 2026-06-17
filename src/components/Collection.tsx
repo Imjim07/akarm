@@ -1,0 +1,147 @@
+const products = [
+  {
+    id: 1,
+    name: "Linen Overcoat",
+    price: "₦185,000",
+    tag: "New",
+    image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=600&q=80",
+  },
+  {
+    id: 2,
+    name: "Relaxed Trouser",
+    price: "₦72,000",
+    tag: null,
+    image: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&q=80",
+  },
+  {
+    id: 3,
+    name: "Cotton Shirt",
+    price: "₦58,000",
+    tag: "Bestseller",
+    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&q=80",
+  },
+];
+
+export default function Collection() {
+  return (
+    <section
+      id="collection"
+      style={{
+        backgroundColor: "var(--color-bg)",
+        padding: "8rem 2.5rem",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-end",
+          marginBottom: "4rem",
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: "var(--font-cormorant)",
+            fontSize: "clamp(2rem, 4vw, 3.5rem)",
+            fontWeight: 300,
+            color: "var(--color-text)",
+          }}
+        >
+          The Collection
+        </h2>
+        <span
+          style={{
+            fontFamily: "var(--font-inter)",
+            fontSize: "0.7rem",
+            letterSpacing: "0.2em",
+            textTransform: "uppercase",
+            opacity: 0.5,
+            cursor: "pointer",
+          }}
+        >
+          View All
+        </span>
+      </div>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "2rem",
+        }}
+      >
+        {products.map((product) => (
+          <div key={product.id}>
+            <div
+              style={{
+                width: "100%",
+                aspectRatio: "3/4",
+                marginBottom: "1.25rem",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <img
+                src={product.image}
+                alt={product.name}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+              />
+              {product.tag && (
+                <span
+                  style={{
+                    position: "absolute",
+                    top: "1rem",
+                    left: "1rem",
+                    fontFamily: "var(--font-inter)",
+                    fontSize: "0.6rem",
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    backgroundColor: "var(--color-text)",
+                    color: "var(--color-bg)",
+                    padding: "0.25rem 0.6rem",
+                  }}
+                >
+                  {product.tag}
+                </span>
+              )}
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "baseline",
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: "var(--font-cormorant)",
+                  fontSize: "1.1rem",
+                  fontWeight: 400,
+                  color: "var(--color-text)",
+                }}
+              >
+                {product.name}
+              </span>
+              <span
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: "0.75rem",
+                  color: "var(--color-text)",
+                  opacity: 0.6,
+                }}
+              >
+                {product.price}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
