@@ -24,14 +24,26 @@ export default async function Hero() {
         overflow: "hidden",
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundColor: "#2a2520",
-          opacity: 0.85,
-        }}
-      />
+ <img
+  src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1400&q=80"
+  alt="AKARM Hero"
+  style={{
+    position: "absolute",
+    inset: 0,
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "center",
+  }}
+/>
+<div
+  style={{
+    position: "absolute",
+    inset: 0,
+    backgroundColor: "#2a2520",
+    opacity: 0.6,
+  }}
+/>
 
       <div style={{ position: "relative", zIndex: 2, maxWidth: "600px" }}>
         <p
