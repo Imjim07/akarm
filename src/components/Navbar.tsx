@@ -1,3 +1,27 @@
+"use client";
+
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useCart } from "@/context/CartContext";
+
+function BagButton() {
+  const { count, setIsOpen } = useCart();
+  return (
+    <span
+      onClick={() => setIsOpen(true)}
+      style={{
+        fontFamily: "var(--font-inter)",
+        fontSize: "0.75rem",
+        letterSpacing: "0.15em",
+        textTransform: "uppercase",
+        opacity: 0.7,
+        cursor: "pointer",
+      }}
+    >
+      Bag ({count})
+    </span>
+  );
+}
 export default function Navbar() {
   return (
     <nav
@@ -46,18 +70,7 @@ export default function Navbar() {
         ))}
       </div>
 
-      <span
-        style={{
-          fontFamily: "var(--font-inter)",
-          fontSize: "0.75rem",
-          letterSpacing: "0.15em",
-          textTransform: "uppercase",
-          opacity: 0.7,
-          cursor: "pointer",
-        }}
-      >
-        Bag (0)
-      </span>
+<BagButton />
     </nav>
   );
 }

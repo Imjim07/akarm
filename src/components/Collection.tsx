@@ -1,4 +1,7 @@
+"use client";
+import { useCart } from "@/context/CartContext";
 const products = [
+  
   {
     id: 1,
     name: "Linen Overcoat",
@@ -23,6 +26,7 @@ const products = [
 ];
 
 export default function Collection() {
+  const { addItem } = useCart();
   return (
     <section
       id="collection"
@@ -136,9 +140,37 @@ export default function Collection() {
                   opacity: 0.6,
                 }}
               >
-                {product.price}
+                <span
+                >
+                  {product.price}
+                  </span>
+ 
               </span>
             </div>
+             <button
+    onClick={() => addItem({
+    id: product.id.toString(),
+    name: product.name,
+    price: 185000,
+    image: product.image,
+    size: "M",
+  })}
+  style={{
+    marginTop: "0.75rem",
+    width: "100%",
+    padding: "0.6rem",
+    backgroundColor: "#1A1A1A",
+    color: "#F5F2EE",
+    border: "none",
+    cursor: "pointer",
+    fontFamily: "var(--font-inter)",
+    fontSize: "0.7rem",
+    letterSpacing: "0.15em",
+    textTransform: "uppercase",
+  }}
+>
+  Add to Bag
+</button>
           </div>
         ))}
       </div>
