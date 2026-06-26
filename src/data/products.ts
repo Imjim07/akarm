@@ -1,0 +1,32 @@
+export const products = [
+  {
+    id: "1",
+    slug: "linen-overcoat",
+    name: "Linen Overcoat",
+    price: 185000,
+    tag: "New",
+    image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=600&q=80",
+    description: "A relaxed, structured overcoat in premium linen. Designed for the person who moves through the world without needing to announce themselves.",
+    sizes: ["XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: "2",
+    slug: "relaxed-trouser",
+    name: "Relaxed Trouser",
+    price: 72000,
+    tag: null,
+    image: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&q=80",
+    description: "Wide-leg trousers cut from soft cotton twill. Comfortable enough for all day. Sharp enough for anywhere.",
+    sizes: ["XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: "3",
+    slug: "cotton-shirt",
+    name: "Cotton Shirt",
+    price: 58000,
+    tag: "Bestseller",
+    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&q=80",
+    description: "An oversized cotton shirt in washed white. The kind of piece that works with everything and improves with every wear.",
+    sizes: ["XS", "S", "M", "L", "XL"],
+  },
+];

@@ -1,29 +1,7 @@
 "use client";
 import { useCart } from "@/context/CartContext";
-const products = [
-  
-  {
-    id: 1,
-    name: "Linen Overcoat",
-    price: "₦185,000",
-    tag: "New",
-    image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=600&q=80",
-  },
-  {
-    id: 2,
-    name: "Relaxed Trouser",
-    price: "₦72,000",
-    tag: null,
-    image: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&q=80",
-  },
-  {
-    id: 3,
-    name: "Cotton Shirt",
-    price: "₦58,000",
-    tag: "Bestseller",
-    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&q=80",
-  },
-];
+import { products } from "@/data/products";
+
 
 export default function Collection() {
   const { addItem } = useCart();
@@ -75,7 +53,11 @@ export default function Collection() {
         }}
       >
         {products.map((product) => (
-          <div key={product.id}>
+          <a key={product.id}
+          
+          href={"/product/" + product.slug}
+            style={{ textDecoration: "none", color: "inherit", display: "block" }}
+          >
             <div
               style={{
                 width: "100%",
@@ -171,7 +153,8 @@ export default function Collection() {
 >
   Add to Bag
 </button>
-          </div>
+
+          </a>
         ))}
       </div>
     </section>
