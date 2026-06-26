@@ -51,7 +51,7 @@ export default function CheckoutPage() {
   return (
     <main style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)", paddingTop: "80px" }}>
       <Navbar />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", maxWidth: "1200px", margin: "0 auto", padding: "4rem 2.5rem", gap: "6rem" }}>
+      <div  className="akarm-checkout-grid"style={{ display: "grid", gridTemplateColumns: "1fr 1fr", maxWidth: "1200px", margin: "0 auto", padding: "4rem 2.5rem", gap: "6rem" }}>
 
         <div>
           <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-text)", opacity: 0.5, marginBottom: "2rem" }}>

@@ -14,3 +14,24 @@ body {
   color: var(--color-text);
   font-family: var(--font-inter);
 }
+
+@media (max-width: 768px) {
+  div.akarm-nav-links {
+    display: none !important;
+  }
+  div.akarm-grid-3,
+  .akarm-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+  section.akarm-product-grid {
+    grid-template-columns: 1fr !important;
+  }
+  div.akarm-checkout-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .akarm-mobile-menu {
+    display: block !important;
+  }
+}
+
+.akarm-mobile-menu { display: none; }

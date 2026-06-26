@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
+
 function BagButton() {
   const { count, setIsOpen } = useCart();
   return (
@@ -23,6 +24,7 @@ function BagButton() {
   );
 }
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
   return (
     <nav
       style={{
@@ -51,7 +53,7 @@ export default function Navbar() {
         AKARM
       </span>
 
-      <div style={{ display: "flex", gap: "2.5rem" }}>
+      <div className="akarm-nav-links" style={{ display: "flex", gap: "2.5rem" }}>
         {["Collection", "About", "Stores"].map((link) => (
           <span
             key={link}
@@ -71,6 +73,50 @@ export default function Navbar() {
       </div>
 
 <BagButton />
+<button
+  onClick={() => setOpen(!open)}
+  className="akarm-mobile-menu"
+  style={{
+    background: "none",
+    border: "none",
+    cursor: "pointer",
+    color: "var(--color-text)",
+  }}
+>
+  {open ? <X size={20} /> : <Menu size={20} />}
+</button>
+
+{open && (
+  <div style={{
+    position: "absolute",
+    top: "100%",
+    left: 0,
+    right: 0,
+    backgroundColor: "var(--color-bg)",
+    borderBottom: "1px solid var(--color-surface)",
+    padding: "1.5rem 2.5rem",
+    display: "flex",
+    flexDirection: "column",
+    gap: "1.25rem",
+  }}>
+    {["Collection", "About", "Stores"].map((link) => (
+      <span
+        key={link}
+        onClick={() => setOpen(false)}
+        style={{
+          fontFamily: "var(--font-inter)",
+          fontSize: "1rem",
+          letterSpacing: "0.15em",
+          textTransform: "uppercase",
+          color: "var(--color-text)",
+          cursor: "pointer",
+        }}
+      >
+        {link}
+      </span>
+    ))}
+  </div>
+)}
     </nav>
   );
 }

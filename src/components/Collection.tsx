@@ -13,7 +13,7 @@ export default function Collection() {
         padding: "8rem 2.5rem",
       }}
     >
-      <div
+      <div className="akarm-grid-3"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -45,12 +45,12 @@ export default function Collection() {
         </span>
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "2rem",
-        }}
+      <div className="akarm-grid-3"
+style={{
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+  gap: "2rem",
+}}
       >
         {products.map((product) => (
           <a key={product.id}

@@ -39,7 +39,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     <main>
       <Navbar />
       <CartDrawer />
-      <section style={{
+      <section  className="akarm-checkout-grid"style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
         minHeight: "100vh",
